@@ -73,14 +73,14 @@
         </ul>
       </fieldset>
 
-      <button class="filter__submit button button--primery" type="submit" :disabled="isDisabled">
+      <button class="filter__submit button button--primery" type="submit" v-show="isDisabled">
         Применить
       </button>
       <button
         class="filter__reset button button--second"
         type="button"
         @click.prevent="reset"
-        :disabled="isDisabled"
+        v-show="isDisabled"
       >
         Сбросить
       </button>
@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import BaseSelectOption from "./BaseSelectOption.vue";
+import BaseSelectOption from "./Base/BaseSelectOption.vue";
 import FilterCheckMaterials from "./FilterCheckMaterials.vue";
 import FilterCheckSeason from "./FilterCheckSeason.vue";
 import FilterCheckColor from "./FilterCheckColor.vue";
@@ -173,9 +173,12 @@ export default {
         this.isDisabled_5 &&
         this.isDisabled_6
       ) {
-        return true;
-      } else {
+        if (this.currentCategoryId !== 0) {
+          return true;
+        }
         return false;
+      } else {
+        return true;
       }
     },
   },

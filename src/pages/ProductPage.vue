@@ -209,7 +209,7 @@ import { mapActions, mapMutations } from "vuex";
 import numberFormat from "@/helpers/numberFormat";
 import ProductColor from "@/components/ProductColor.vue";
 import ProductItemImg from "@/components/ProductItemImg.vue";
-import BaseSelectOption from "@/components/BaseSelectOption.vue";
+import BaseSelectOption from "@/components/Base/BaseSelectOption.vue";
 
 export default {
   components: { ProductColor, BaseSelectOption, ProductItemImg },
